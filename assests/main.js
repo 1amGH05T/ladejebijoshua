@@ -28,51 +28,56 @@ window.addEventListener("load", () => {
                 }, 700);
             }
         }, 100);
-    }, 1500); 
+    }, 1500);
 });
 
 const testimonials = [
     {
         quote: "this plat",
         author: "ada",
-        role: "frontend"
+        role: "frontend",
+        image: "assests/profile.png"
     },
     {
         quote: "another",
         author: "joshua",
-        role: "ui/ux"
+        role: "ui/ux",
+        image: "assests/profile.png"
     },
     {
         quote: "hmmmmm",
         author: "deborah",
-        role: "backend"
+        role: "backend",
+        image: "assests/profile.png"
     },
     {
         quote: "clown",
         author: "nife",
-        role: "cybersecurity"
+        role: "cybersecurity",
+        image: "assests/profile.png"
     },
 ];
 
 let current = 0;
 
-function updateTestimonial(){
+function updateTestimonial() {
     const testimonialDiv = document.getElementById("testimonial");
     const t = testimonials[current];
     testimonialDiv.innerHTML = `
     <p class="quote">${t.quote}</p>
     <h3 class="author">${t.author}</h3>
     <p class="role">${t.role}</p>
+    <img src="${t.image}" alt="${t.author}">
     `
 }
 
-function nextTestimonial(){
-    current = (current + 1)% testimonials.length;
+function nextTestimonial() {
+    current = (current + 1) % testimonials.length;
     updateTestimonial();
 }
 
-function prevTestimonial(){
-    current = (current - 1)% testimonials.length;
+function prevTestimonial() {
+    current = (current - 1) % testimonials.length;
     updateTestimonial();
 }
 
