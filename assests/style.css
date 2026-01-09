@@ -433,9 +433,14 @@ h4 {
 
 /* PORTFOLIO */
 .portfolio_images {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    flex-wrap: wrap;
+    grid-auto-flow: dense;
+}
+
+.portfolio_images .span-2 {
+    grid-column: span 2;
 }
 
 .border {
@@ -443,9 +448,21 @@ h4 {
     border: 2px solid aqua;
     border-radius: 20px;
     padding: 15px;
-    width: 500px;
+    width: 100%;
+    /* Changed from fixed 500px */
     text-align: left;
     transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure images fill the card */
+.image {
+    height: 220px;
+    /* Slights taller */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 i {
@@ -492,8 +509,10 @@ i:hover {
 }
 
 .border:hover {
-    transform: translateY(-8px) scale(1.05);
+    transform: translateY(-8px) scale(1.02);
+    /* Reduced scale slightly for grid */
     box-shadow: 0 0 20px aqua;
+    z-index: 2;
 }
 
 .border:hover h3,
@@ -512,12 +531,8 @@ i:hover {
     cursor: pointer;
 }
 
-.image {
-    height: 190px;
-    width: 450px;
-    /* object-fit: cover; */
-    border-radius: 15px;
-}
+/* Removed old fixed width .image rule, merged above */
+
 
 /* SKILLS */
 .skills {
@@ -546,15 +561,65 @@ h6 {
     margin-top: 40px;
 }
 
-.testimonial {
-    border: 2px solid gray;
-    padding: 10px;
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
-.testimonial:hover {
+.testimonial-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* padding: 25px; */
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.testimonial-card:hover {
     border: 2px solid aqua;
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
 }
 
+.testimonial-card .quote {
+    font-style: italic;
+    opacity: 0.8;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.testimonial-card .author {
+    color: aqua;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.testimonial-card .role {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid aqua;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+/* Mobile Responsive Fixes for Grid */
+@media(max-width: 768px) {
+    .portfolio_images .span-2 {
+        grid-column: span 1 !important;
+        /* Force single column on mobile */
+    }
+}
 
 /* PRICING SECTION */
 .pricing-section {

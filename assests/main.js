@@ -33,53 +33,49 @@ window.addEventListener("load", () => {
 
 const testimonials = [
     {
-        quote: "this plat",
+        quote: "Drake - A Developer with the creativity, professional and master of code. Much more than what i'm expect. High quality product & flexiable price. Recommended!.",
         author: "ada",
         role: "frontend",
         image: "assests/profile.png"
     },
     {
-        quote: "another",
+        quote: "Fantastic work! The attention to detail and animations are top notch. Really elevated our brand presence online.",
         author: "joshua",
         role: "ui/ux",
         image: "assests/profile.png"
     },
     {
-        quote: "hmmmmm",
+        quote: "Delivered on time and exceeded expectations. The code is clean and scalable.",
         author: "deborah",
         role: "backend",
         image: "assests/profile.png"
     },
     {
-        quote: "clown",
+        quote: "Security best practices were followed perfectly. A very reliable developer.",
         author: "nife",
         role: "cybersecurity",
         image: "assests/profile.png"
     },
 ];
 
-let current = 0;
+function renderTestimonials() {
+    const testimonialContainer = document.getElementById("testimonial");
+    if (!testimonialContainer) return;
 
-function updateTestimonial() {
-    const testimonialDiv = document.getElementById("testimonial");
-    const t = testimonials[current];
-    testimonialDiv.innerHTML = `
-    <p class="quote">${t.quote}</p>
-    <h3 class="author">${t.author}</h3>
-    <p class="role">${t.role}</p>
-    <img src="${t.image}" alt="${t.author}">
-    `
+    testimonialContainer.innerHTML = testimonials.map(t => `
+        <div class="testimonial-card slide-up">
+            <p class="quote">"${t.quote}"</p>
+            <div>
+                <h3 class="author">${t.author}</h3>
+                <p class="role">${t.role}</p>
+            </div>
+            <img src="${t.image}" alt="${t.author}">
+        </div>
+    `).join('');
 }
 
-function nextTestimonial() {
-    current = (current + 1) % testimonials.length;
-    updateTestimonial();
-}
-
-function prevTestimonial() {
-    current = (current - 1) % testimonials.length;
-    updateTestimonial();
-}
+// Render on load
+document.addEventListener('DOMContentLoaded', renderTestimonials);
 
 // Close mobile menu when link clicked
 document.addEventListener('DOMContentLoaded', () => {
