@@ -33,28 +33,28 @@ window.addEventListener("load", () => {
 
 const testimonials = [
     {
-        quote: "Drake - A Developer with the creativity, professional and master of code. Much more than what i'm expect. High quality product & flexiable price. Recommended!.",
-        author: "ada",
-        role: "frontend",
-        image: "assests/profile.png"
+        quote: "Joshua is a developer with exceptional creativity and coding mastery. The final product exceeded my expectations. High quality work at a flexible price. Highly recommended!",
+        author: "Sarah J.",
+        role: "Frontend Developer",
+        image: "assests/sarah.jpg"
     },
     {
-        quote: "Fantastic work! The attention to detail and animations are top notch. Really elevated our brand presence online.",
-        author: "joshua",
-        role: "ui/ux",
-        image: "assests/profile.png"
+        quote: "Fantastic work! The attention to detail and animations are top-notch. It really elevated our brand presence online.",
+        author: "Michael C.",
+        role: "UI/UX Designer",
+        image: "assests/michael.jpg"
     },
     {
-        quote: "Delivered on time and exceeded expectations. The code is clean and scalable.",
-        author: "deborah",
-        role: "backend",
-        image: "assests/profile.png"
+        quote: "Delivered on time and exceeded expectations. The code is clean, scalable, and easy to maintain.",
+        author: "Emily D.",
+        role: "Backend Developer",
+        image: "assests/emily.jpg"
     },
     {
-        quote: "Security best practices were followed perfectly. A very reliable developer.",
-        author: "nife",
-        role: "cybersecurity",
-        image: "assests/profile.png"
+        quote: "Security best practices were followed perfectly. A very reliable and skilled developer.",
+        author: "David W.",
+        role: "Cybersecurity Engineer",
+        image: "assests/cyber.jpg"
     },
 ];
 
@@ -86,32 +86,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact form handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            const name = document.getElementById('name-field');
-            const email = document.getElementById('email-field');
-            const message = document.getElementById('message-field');
+
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(this);
             const success = document.getElementById('contact-success');
 
-            // basic validation
-            if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
-                success.style.color = '#ffcccb';
-                success.textContent = 'Please fill all fields.';
-                success.style.display = 'block';
-                return;
-            }
-
-            // show success and clear
-            success.style.color = 'lightgreen';
-            success.textContent = 'Thanks — I\'ll get back to you soon!';
-            success.style.display = 'block';
-            contactForm.reset();
-
-            // Optionally open mail client as fallback (commented)
-            // window.location.href = `mailto:you@domain.com?subject=Contact from ${encodeURIComponent(name.value)}&body=${encodeURIComponent(message.value)}`;
+            fetch("https://formsubmit.co/ajax/ladejebijoshua@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    success.style.color = 'lightgreen';
+                    success.textContent = 'Thanks — I\'ll get back to you soon!';
+                    success.style.display = 'block';
+                    contactForm.reset();
+                    setTimeout(() => {
+                        success.style.display = 'none';
+                    }, 5000);
+                })
+                .catch(error => {
+                    success.style.color = '#ffcccb';
+                    success.textContent = 'Something went wrong. Please try again.';
+                    success.style.display = 'block';
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 });

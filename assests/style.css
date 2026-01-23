@@ -296,8 +296,6 @@ body {
     font-size: 32px;
     cursor: pointer;
     color: white;
-    border: 2px solid gray;
-    border-radius: 50%;
     padding: 10px;
 }
 
@@ -465,6 +463,10 @@ h4 {
     border-radius: 15px;
 }
 
+.portfolio_images .border button {
+    width: 70%;
+}
+
 i {
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid gray;
@@ -563,7 +565,7 @@ h6 {
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
