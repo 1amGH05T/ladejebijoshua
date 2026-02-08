@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
 
                 setTimeout(() => {
                     loader.style.display = "none";
-                    content.style.display = "flex";
+                    content.style.display = "block";
                 }, 700);
             }
         }, 100);
