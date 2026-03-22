@@ -1,91 +1,89 @@
-window.addEventListener("load", () => {
-    const loader = document.getElementById('loader');
-    const bounceball = document.getElementById('bounceball');
-    const nameEl = document.getElementById('name');
-    const cursor = document.getElementById('cursor');
-    const content = document.getElementById('content');
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Matrix Rain Effect
+    const canvas = document.getElementById('matrix');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    const fullName = "1amGH05T | FRONTEND DEVELOPER";
-    let index = 0;
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(1);
 
-    setTimeout(() => {
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0f0'; // Cyber green
+            ctx.font = fontSize + 'px "JetBrains Mono", monospace';
 
-        bounceball.style.display = "none";
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        nameEl.style.display = "block";
-        cursor.style.display = "inline";
-
-        const typeEffect = setInterval(() => {
-            if (index < fullName.length) {
-                nameEl.textContent += fullName[index];
-                index++;
-            } else {
-                clearInterval(typeEffect);
-
-                setTimeout(() => {
-                    loader.style.display = "none";
-                    content.style.display = "block";
-                }, 700);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
             }
-        }, 100);
-    }, 1500);
-});
+        }
+        setInterval(drawMatrix, 50);
 
-const testimonials = [
-    {
-        quote: "Joshua is a developer with exceptional creativity and coding mastery. The final product exceeded my expectations. High quality work at a flexible price. Highly recommended!",
-        author: "Sarah J.",
-        role: "Frontend Developer",
-        image: "assests/sarah.jpg"
-    },
-    {
-        quote: "Fantastic work! The attention to detail and animations are top-notch. It really elevated our brand presence online.",
-        author: "Michael C.",
-        role: "UI/UX Designer",
-        image: "assests/michael.jpg"
-    },
-    {
-        quote: "Delivered on time and exceeded expectations. The code is clean, scalable, and easy to maintain.",
-        author: "Emily D.",
-        role: "Backend Developer",
-        image: "assests/emily.jpg"
-    },
-    {
-        quote: "Security best practices were followed perfectly. A very reliable and skilled developer.",
-        author: "David W.",
-        role: "Cybersecurity Engineer",
-        image: "assests/cyber.jpg"
-    },
-];
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    }
 
-function renderTestimonials() {
-    const testimonialContainer = document.getElementById("testimonial");
-    if (!testimonialContainer) return;
+    // 2. Typing Effect for Terminal
+    const typingHero = document.getElementById('typing-hero');
+    if (typingHero) {
+        const text = "Loading core modules...\nAccessing secure server...\nWelcome to the Mainframe, 1amGH05T.";
+        let i = 0;
+        typingHero.innerHTML = '';
+        function typeWriter() {
+            if (i < text.length) {
+                if (text.charAt(i) === '\n') {
+                    typingHero.innerHTML += '<br/>';
+                } else {
+                    typingHero.innerHTML += text.charAt(i);
+                }
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        setTimeout(typeWriter, 500);
+    }
 
-    testimonialContainer.innerHTML = testimonials.map(t => `
-        <div class="testimonial-card slide-up">
-            <p class="quote">"${t.quote}"</p>
-            <div>
-                <h3 class="author">${t.author}</h3>
-                <p class="role">${t.role}</p>
-            </div>
-            <img src="${t.image}" alt="${t.author}">
-        </div>
-    `).join('');
-}
+    // 3. Project Filter
+    const filterBtns = document.querySelectorAll('.filter-btns .cyber-btn');
+    const projectCards = document.querySelectorAll('.project-card');
 
-// Render on load
-document.addEventListener('DOMContentLoaded', renderTestimonials);
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
 
-// Close mobile menu when link clicked
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    document.querySelectorAll('.unordered_list a').forEach(a => {
-        a.addEventListener('click', () => {
-            if (menuToggle) menuToggle.checked = false;
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     });
 
+    // 4. Accordion Logic
+    document.querySelectorAll('.acc-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+
+    // 5. Contact Form Submit Logic
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {

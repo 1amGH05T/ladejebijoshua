@@ -1,377 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="1amGH05T – A passionate frontend developer creating clean, modern, and scalable web experiences.">
-    <meta name="keywords" content="Frontend Developer, Portfolio, Web Developer, HTML CSS JavaScript">
-    <!-- Open Graph SEO -->
-    <meta property="og:title" content="1amGH05T - Frontend Developer Portfolio">
-    <meta property="og:description" content="Modern, clean and scalable frontend development by 1amGH05T.">
-    <meta property="og:image" content="assests/profile.png">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter SEO -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="1amGH05T - Portfolio">
-    <meta name="twitter:description" content="Frontend developer building modern web experiences.">
-    <meta name="twitter:image" content="assests/profile.png">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://ladejebijoshua.vercel.app">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assests/favicon.png">
-
-    <meta name="author" content="1amGH05T">
-    <title>Frontend Developer | 1amGH05T – Portfolio & Projects</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <title>1amGH05T | Full Stack Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assests/style.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
-
 <body>
-    <!-- VIDEO BACKGROUND -->
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="assests/video1.mp4" type="video/mp4">
-    </video>
+    <canvas id="matrix"></canvas>
+    
+    <nav class="cyber-nav">
+        <div class="logo">1amGH05T<span class="blink">_</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Timeline</a></li>
+            <li><a href="#portfolio">Deployments</a></li>
+            <li><a href="#contact">Sys_Link</a></li>
+        </ul>
+    </nav>
 
-    <div class="video-overlay"></div>
-    <div class="page-loader" id="loader">
-        <div class="bounceball" id="bounceball"></div>
-
-        <h1 id="name" style="display:none;"></h1>
-        <span id="cursor" style="display:none;">|</span>
-    </div>
-
-    <main id="content">
-
-        <div class="portfolio-layout">
-
-            <!-- LEFT FIXED PROFILE CARD -->
-            <aside class="profile-card">
-                <h1 class="logo">1amGH05T<span class="dot">1</span></h1>
-
-                <img src="assests/profile.png" class="profile-img">
-
-                <div class="profile-info">
-                    <p>ladejebijoshua@gmail.com</p>
-                    <p>Base in Nigeria, Lagos</p>
+    <main>
+        <!-- Hero Terminal -->
+        <section id="hero" class="fullscreen">
+            <div class="terminal-window">
+                <div class="term-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    <span class="term-title">bash - root@lagos-mainframe:~</span>
                 </div>
-
-                <p class="footer">© 2026 1amGH05T. All Rights Reserved</p>
-
-                <div class="circles">
-                    <span class="hov"></span><span class="hov"></span><span class="hov"></span><span class="hov"></span>
+                <div class="term-body">
+                    <p class="cmd"><span class="prompt">$</span> ./initialize_portfolio.sh</p>
+                    <p class="output" id="typing-hero"></p>
+                    <div class="github-ticker">
+                        <span class="prompt">></span> Pulling GitHub Data... <span class="glitch-text">[Commits: 2,137 | Uptime: 99.9% | Status: ONLINE]</span>
+                    </div>
                 </div>
-
-                <button class="hire-btn"><a href="#contact" style="text-decoration: none; color: black;">HIRE
-                        ME!</a></button>
-            </aside>
-
-            <!-- RIGHT MAIN CONTENT -->
-            <div class="portfolio-content">
-
-                <!-- NAVBAR -->
-                <nav class="navbar">
-                    <input type="checkbox" id="menu-toggle">
-                    <label for="menu-toggle" class="hamburger">&#9776;</label>
-
-                    <ul class="unordered_list">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-
-                </nav>
-
-                <!-- HERO SECTION -->
-                <section class="section_1" id="home">
-                    <h4>INTRODUCE</h4>
-                    <div class="pic_div fade-in">
-                        <h1>I'm a <br><span>Frontend developer</span></h1>
-
-                        <p class="para">
-                            <span>1amGH05T.</span> I'm passionate about building robust and scalable
-                            web applications with modern technologies. Passionate about clean
-                            code and user experience.
-                        </p>
-
-                        <div class="buttons">
-                            <button><a href="#contact" style="text-decoration: none; color: white;">Contact me
-                                </a><span>→</span></button>
-                            <button><a href="#portfolio" style="text-decoration: none; color: white;">View Portfolio
-                                </a><span>→</span></button>
-                        </div>
-                    </div>
-
-                </section>
-
-                <!-- EXPERIENCE -->
-                <section class="experience">
-                    <div class="exper slide-up">
-                        <h2>2+</h2>
-                        <p>YEARS OF EXPERIENCE</p>
-                    </div>
-
-                    <div class="projects slide-up">
-                        <h2>50+</h2>
-                        <p>COMPLETED PROJECTS ON <br>4 COUNTRIES</p>
-                    </div>
-                </section>
-
-                <!-- ABOUT -->
-                <section class="about_1" id="about">
-                    <div>
-                        <h4 class="about">ABOUT</h4>
-                        <p class="story">Every great design begins with <br>an even <span>better story</span></p>
-                    </div>
-
-                    <p>
-                        Since beginning my journey as a freelance designer nearly 3 years ago,
-                        I've done remote work for agencies, consulted for startups, and collaborated
-                        with talented people to create digital products for both business and consumer use.
-                        I'm quietly confident, naturally curious, and perpetually working on improving my
-                        design skills one problem at a time.
-                    </p>
-                </section>
-
-                <!-- RESUME -->
-                <section class="resume-p">
-                    <h4>RESUME</h4>
-                    <p class="story">Education & <span>Experience</span></p>
-
-                    <div class="resume_1 slide-up">
-                        <span class="date">2023 - 2025</span>
-                        <h3>Frontend Web developer</h3>
-                        <p>Digital Fortress</p>
-
-                        <h3>Backend Web development Student</h3>
-                        <p>Digital Fortress</p>
-
-                    </div>
-
-                    <div class="resume_1 slide-up">
-                        <span class="date">2025 - Present</span>
-                        <h3>Python programming Student</h3>
-                        <p>W3Schools</p>
-
-                        <h3>MySql student</h3>
-                        <p>Freecodecamp</p>
-
-                    </div>
-
-                    <div class="resume_1 slide-up">
-                        <span class="date">2025 - Present</span>
-                        <h3>Learnt UI/UX design</h3>
-                        <p>Alison</p>
-
-                        <h3>UI Designer</h3>
-                        <p>Digital fortress institute</p>
-                    </div>
-                </section>
-
-                <!-- PORTFOLIO -->
-                <section class="resume-p" id="portfolio">
-                    <h4>PORTFOLIO</h4>
-                    <p class="story">Some of my <span>recent works</span></p>
-
-                    <div class="portfolio_images">
-                        <div class="border fade-in span-2">
-                            <img src="assests/oatc.png" alt="" class="image">
-                            <h3>A church website that was built with React.js, Framer motion and Emailjs</h3>
-                            <button><a href="https://oatc.vercel.app/" target='_blank' rel='noopener noreferrer'
-                                    style="text-decoration: none; color: white;">Visit live site
-                                </a><span>→</span></button>
-                        </div>
-
-                        <!-- <div class="border fade-in">
-                            <img src="assests/game.png" alt="" class="image">
-                            <h3>A small gaming website built with threejs</h3>
-                            <button><a href="https://game-nu-seven-25.vercel.app/" target='_blank' rel='noopener noreferrer'
-                                    style="text-decoration: none; color: white;">Visit live site
-                                </a><span>→</span></button> -->
-
-                        <div class="border fade-in span-2">
-                            <img src="assests/logistics.png" alt="" class="image">
-                            <h3>A logistics website i vibe coded to test out my prompting skills</h3>
-                            <button><a href="https://logisticspro.vercel.app/" target='_blank' rel='noopener noreferrer'
-                                    style="text-decoration: none; color: white;">Visit live site
-                                </a><span>→</span></button>
-                        </div>
-
-                        <div class="border fade-in">
-                            <img src="assests/tisha.png" alt="" class="image">
-                            <h3>A website for a business that sells mainly herbal products and spices  which was built with Tailwindcss and Django<h3>
-                                    <button><a href="https://tishalagbo.onrender.com/" target='_blank' rel='noopener noreferrer'
-                                            style="text-decoration: none; color: white;">Visit live site
-                                        </a><span>→</span></button>
-                        </div>
-
-                        <div class="border fade-in">
-                            <img src="assests/bank.png" alt="" class="image">
-                            <h3>A demo for a bank website built with html, css and vanilla javascript<h3>
-                                    <button><a href="https://bank-app-three-nu.vercel.app/" target='_blank' rel='noopener noreferrer'
-                                            style="text-decoration: none; color: white;">Visit live site
-                                        </a><span>→</span></button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SKILLS -->
-                <section class="skills">
-                    <h4>My skills</h4>
-                    <p class="advantages">My <span>Avantages</span></p>
-
-                    <div class="skills_bar">
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-html5-plain" class="border1 fade-in"></i>
-                            <h6>HTML</h6>
-                        </div>
-
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-css3-plain" class="border1 fade-in"></i>
-                            <h6>CSS</h6>
-                        </div>
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-css3-plain" class="border1 fade-in"></i>
-                            <h6>Tailwindcss</h6>
-                        </div>
-
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-javascript-plain" class="border1 fade-in"></i>
-                            <h6>JavaScript</h6>
-                        </div>
-
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-react-original" class="border1 fade-in"></i>
-                            <h6>React</h6>
-                        </div>
-
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-python-plain" class="border1 fade-in"></i>
-                            <h6>Python</h6>
-                        </div>
-
-                        <div class="skill_1 slide-up">
-                            <i class="devicon-django-plain" class="border1 fade-in"></i>
-                            <h6>Django</h6>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="skills">
-                    <h4>SERVICES</h4>
-                    <p class="advantages">My <span>Specializations</span></p>
-
-                    <div>
-                        <div class="resume slide-up">
-                            <span class="date">Web design</span>
-                            <p class="created">I created digital products with unique ideas use Figma & Framer</p>
-                            <p class="div-hover">24 projects</p>
-                        </div>
-                        <div class="resume slide-up">
-                            <span class="date">Web development</span>
-                            <p class="created">I build website go live with Framer, Webflow or WordPress</p>
-                            <p class="div-hover">154 projects</p>
-                        </div>
-                        <div class="resume slide-up">
-                            <span class="date">SEO/Marketing</span>
-                            <p class="created">Increase the traffic for your website with SEO optimized</p>
-                            <p class="div-hover">4 projects</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="testimonial-section">
-                    <h4>TESTIMONIAL</h4>
-                    <p class="advantages">Trusted by <span>Hundred Clients</span></p>
-                    <div class="testimonial-grid" id="testimonial">
-                        <!-- Content injected by JS -->
-                    </div>
-                </section>
-
-                <!-- PRICING SECTION -->
-                <section class="pricing-section" id="pricing">
-                    <h4>PRICING</h4>
-                    <p class="advantages">My <span>Pricing</span></p>
-
-                    <div class="pricing-container">
-                        <div class="pricing-card slide-up">
-                            <h3>Basic</h3>
-                            <div class="price">$50</div>
-                            <p class="desc">For simple personal websites.</p>
-                            <ul>
-                                <li>1 Page</li>
-                                <li>Responsive Design</li>
-                                <li>Basic SEO</li>
-                            </ul>
-                            <!-- <button class="hire-btn-card">Choose Plan</button> -->
-                        </div>
-                        <div class="pricing-card slide-up featured">
-                            <h3>Standard</h3>
-                            <div class="price">$150</div>
-                            <p class="desc">For small businesses.</p>
-                            <ul>
-                                <li>5 Pages</li>
-                                <li>Responsive Design</li>
-                                <li>SEO Optimization</li>
-                                <li>Contact Form</li>
-                            </ul>
-                            <!-- <button class="hire-btn-card">Choose Plan</button> -->
-                        </div>
-                        <div class="pricing-card slide-up">
-                            <h3>Premium</h3>
-                            <div class="price">$300</div>
-                            <p class="desc">For comprehensive web solutions.</p>
-                            <ul>
-                                <li>10+ Pages</li>
-                                <li>E-commerce Functionality</li>
-                                <li>Advanced SEO</li>
-                                <li>Priority Support</li>
-                            </ul>
-                            <!-- <button class="hire-btn-card">Choose Plan</button> -->
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CONTACT SECTION -->
-                <section class="contact-section" id="contact">
-                    <h4>CONTACT</h4>
-                    <p class="advantages">Get in <span>Touch</span></p>
-
-                    <div class="contact-container slide-up">
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <label for="name-field">Name</label>
-                                <input type="text" id="name-field" name="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email-field">Email</label>
-                                <input type="email" id="email-field" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message-field">Message</label>
-                                <textarea id="message-field" name="message" rows="5" placeholder="How can I help you?"
-                                    required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                            <p id="contact-success" style="display:none; margin-top:10px;"></p>
-                        </form>
-                    </div>
-                </section>
             </div>
-        </div>
+        </section>
 
+        <!-- About Section -->
+        <section id="about" class="cyber-section">
+            <h2 class="section-title" data-text="< USER_BIO >">&lt; USER_BIO &gt;</h2>
+            <div class="about-grid">
+                <div class="avatar-container">
+                    <div class="scanline"></div>
+                    <img src="assests/profile.png" alt="Avatar" class="cyber-avatar">
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="tl-date">2023 - Origin</div>
+                        <div class="tl-content">Lagos Bootcamps: Initiated coding sequence and core syntax logic.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-date">2024 - Freelance Mercenary</div>
+                        <div class="tl-content">Built robust full-stack MVPs and scalable web systems for global agencies.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-date">2026 - Enterprise Architect</div>
+                        <div class="tl-content">Leading high-uptime cloud architectures and cutting-edge React interfaces.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume / Timeline -->
+        <section id="resume" class="cyber-section">
+            <h2 class="section-title" data-text="< WORK_LOGS >">&lt; WORK_LOGS &gt;</h2>
+            <div class="accordion">
+                <div class="acc-item">
+                    <div class="acc-header">Lead Full Stack Engineer <span class="acc-icon">+</span></div>
+                    <div class="acc-body">
+                        <p>Led a 50k-user SaaS platform. Stack: React, Node.js, PostgreSQL. Achieved 99.9% uptime.</p>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-header">Backend API Architect <span class="acc-icon">+</span></div>
+                    <div class="acc-body">
+                        <p>Designed scalable microservices architecture utilizing Docker, AWS, and Express routing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="cyber-section">
+            <h2 class="section-title" data-text="< DEPLOYMENTS >">&lt; DEPLOYMENTS &gt;</h2>
+            <div class="filter-btns">
+                <button class="cyber-btn active" data-filter="all">All</button>
+                <button class="cyber-btn" data-filter="react">React / Next</button>
+                <button class="cyber-btn" data-filter="node">Node / Express</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="project-card" data-category="react">
+                    <div class="card-img-wrapper">
+                        <img src="assests/oatc.png" alt="Project">
+                        <div class="overlay-demo">EXECUTE DEMO</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Cyber Logistics Platform</h3>
+                        <div class="badges"><span class="badge">React</span><span class="badge">Node.js</span></div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="node">
+                    <div class="card-img-wrapper">
+                        <img src="assests/tisha.png" alt="Project">
+                        <div class="overlay-demo">EXECUTE DEMO</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Enterprise API Gateway</h3>
+                        <div class="badges"><span class="badge">Node.js</span><span class="badge">PostgreSQL</span></div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="react">
+                    <div class="card-img-wrapper">
+                        <img src="assests/bank.png" alt="Project">
+                        <div class="overlay-demo">EXECUTE DEMO</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>FinTech Dashboard UI</h3>
+                        <div class="badges"><span class="badge">React</span><span class="badge">Tailwind</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="cyber-section">
+            <h2 class="section-title" data-text="< ARSENAL >">&lt; ARSENAL &gt;</h2>
+            <div class="skills-container">
+                <div class="skill-bar"><div class="skill-info"><span>Frontend (React/Next)</span><span>95%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span>Backend (Node/Python)</span><span>92%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span>DevOps (Docker/AWS)</span><span>88%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div></div>
+            </div>
+            <div class="cyber-icons">
+                <i class="devicon-react-original colored"></i>
+                <i class="devicon-nodejs-plain colored"></i>
+                <i class="devicon-postgresql-plain colored"></i>
+                <i class="devicon-docker-plain colored"></i>
+                <i class="devicon-python-plain colored"></i>
+            </div>
+        </section>
+
+        <!-- Pricing / Services -->
+        <section id="pricing" class="cyber-section">
+            <h2 class="section-title" data-text="< PROTOCOLS >">&lt; PROTOCOLS &gt;</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Freelance App</h3><div class="price">$2k</div>
+                    <ul><li>Responsive SPA</li><li>Basic API Integration</li><li>Standard Delivery</li></ul>
+                    <button class="cyber-btn w-full">Request Quote</button>
+                </div>
+                <div class="price-card highlighted">
+                    <h3>Startup Scale</h3><div class="price">$5k<span>/mo</span></div>
+                    <ul><li>Full Stack Architecture</li><li>Database Modeling</li><li>Priority Comm Link</li></ul>
+                    <button class="cyber-btn w-full inverse">Request Quote</button>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3><div class="price">Custom</div>
+                    <ul><li>Microservices</li><li>Advanced DevOps Setup</li><li>24/7 SLA</li></ul>
+                    <button class="cyber-btn w-full">Request Quote</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="cyber-section">
+            <h2 class="section-title" data-text="< ESTABLISH_LINK >">&lt; ESTABLISH_LINK &gt;</h2>
+            <div class="contact-wrapper">
+                <form class="terminal-form" id="contact-form">
+                    <div class="form-header">send_message.exe</div>
+                    <div class="form-body">
+                        <div class="input-group">
+                            <label>USER_NAME:</label>
+                            <input type="text" name="name" required placeholder="Enter designation...">
+                        </div>
+                        <div class="input-group">
+                            <label>COMM_LINK (EMAIL):</label>
+                            <input type="email" name="email" required placeholder="Enter ping address...">
+                        </div>
+                        <div class="input-group">
+                            <label>PAYLOAD (SCOPE):</label>
+                            <textarea name="message" rows="4" required placeholder="Enter project parameters..."></textarea>
+                        </div>
+                        <button type="submit" class="cyber-btn">EXECUTE TRANSMISSION</button>
+                        <p id="contact-success" class="sys-msg"></p>
+                    </div>
+                </form>
+                <div class="map-placeholder">
+                    <div class="pin"></div>
+                    <p>LOC: LAGOS, NIGERIA</p>
+                    <p>STATUS: ACCEPTING CONNECTIONS</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>System initialized by 1amGH05T © 2026</p>
+        <div class="social-links">
+            <a href="#">[ GitHub ]</a>
+            <a href="#">[ LinkedIn ]</a>
+            <a href="#">[ X ]</a>
+        </div>
+    </footer>
+
     <script src="assests/main.js"></script>
 </body>
-
 </html>
