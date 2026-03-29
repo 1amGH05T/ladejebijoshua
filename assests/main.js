@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const submitBtn = this.querySelector('.submit-btn');
+            const submitBtn = this.querySelector('.cyber-btn');
             const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
