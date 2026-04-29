@@ -1,201 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1amGH05T | Full Stack Architect</title>
-    <link rel="icon" type="image/png+xml" href="/assests/profile.png" style="border-radius: 20px;"/>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Joshua | Full Stack Architect</title>
+    <meta name="description"
+        content="Joshua — Full Stack Architect specializing in React, Node.js, and cloud-native systems. Building premium digital experiences from Lagos to the world.">
+    <link rel="icon" type="image/png" href="assests/profile.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assests/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
+
 <body>
-    <canvas id="matrix"></canvas>
-    
-    <nav class="cyber-nav">
-        <div class="logo">1amGH05T<span class="blink">_</span></div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#resume">Timeline</a></li>
-            <li><a href="#portfolio">Deployments</a></li>
-            <li><a href="#contact">Sys_Link</a></li>
+    <!-- Particle Canvas Background -->
+    <canvas id="liquid-bg"></canvas>
+
+    <!-- Glassmorphic Navigation -->
+    <nav class="glass-nav" id="navbar">
+        <div class="nav-logo">
+            <span class="prompt-symbol">&gt;</span> josh<span class="accent">@portfolio</span>:~$<span
+                class="blink-cursor">_</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about" class="nav-link">[ About ]</a></li>
+            <li><a href="#projects" class="nav-link">[ Projects ]</a></li>
+            <li><a href="#skills" class="nav-link">[ Skills ]</a></li>
+            <li><a href="#experience" class="nav-link">[ Experience ]</a></li>
+            <li><a href="#contact" class="nav-link">[ Contact ]</a></li>
         </ul>
     </nav>
 
     <main>
-        <!-- Hero Terminal -->
-        <section id="hero" class="fullscreen">
-            <div class="terminal-window">
-                <div class="term-header">
-                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <span class="term-title">bash - root@lagos-mainframe:~</span>
+        <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <!-- Floating Glass Name Badge -->
+                <div class="glass-badge float-animation">
+                    <div class="badge-glow"></div>
+                    <h1 class="hero-name">Joshua</h1>
+                    <p class="hero-role">Full Stack Architect</p>
                 </div>
-                <div class="term-body">
-                    <p class="cmd"><span class="prompt">$</span> ./initialize_portfolio.sh</p>
-                    <p class="output" id="typing-hero"></p>
-                    <div class="github-ticker">
-                        <span class="prompt">></span> Pulling GitHub Data... <span class="glitch-text">[Commits: 2,137 | Uptime: 99.9% | Status: ONLINE]</span>
+
+                <!-- Tagline -->
+                <p class="hero-tagline">
+                    Building <span class="gradient-text">premium digital systems</span> from Lagos to the world.
+                </p>
+
+                <!-- Terminal Prompt Area -->
+                <div class="hero-terminal glass-panel">
+                    <div class="term-bar">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="term-label">josh@portfolio:~</span>
+                    </div>
+                    <div class="term-body">
+                        <p class="term-line"><span class="prompt-sym">$</span> <span id="typed-output"></span><span
+                                class="blink-cursor">_</span></p>
+                        <div class="term-commands">
+                            <button class="cmd-btn" data-target="#experience"><span class="cmd-bracket">&gt;</span>
+                                experience()</button>
+                            <button class="cmd-btn" data-target="#projects"><span class="cmd-bracket">&gt;</span>
+                                projects()</button>
+                            <button class="cmd-btn" data-target="#contact"><span class="cmd-bracket">&gt;</span>
+                                contact()</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>scroll</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+        <section id="about" class="section reveal-section">
+            <h2 class="section-heading"><span class="heading-bracket">&lt;</span> About <span
+                    class="heading-bracket">/&gt;</span></h2>
+            <div class="about-layout">
+                <div class="about-avatar glass-panel tilt-card">
+                    <img src="assests/profile.png" alt="Joshua — Full Stack Architect" class="avatar-img">
+                    <div class="avatar-label">
+                        <span class="label-dot"></span> Online — Lagos, Nigeria
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="glass-panel about-text-card">
+                        <p>I'm <strong>Joshua</strong> — a full-stack architect obsessed with building elegant, scalable
+                            systems. From performant React interfaces to resilient cloud backends, I engineer solutions
+                            that ship fast and hold up under pressure.</p>
+                    </div>
+                    <div class="timeline-stack">
+                        <div class="glass-panel timeline-card tilt-card">
+                            <span class="tl-year">2023</span>
+                            <h4>Origin</h4>
+                            <p>Lagos bootcamps — initiated coding sequence and core syntax logic.</p>
+                        </div>
+                        <div class="glass-panel timeline-card tilt-card">
+                            <span class="tl-year">2024</span>
+                            <h4>Freelance Architect</h4>
+                            <p>Built robust full-stack MVPs and scalable web systems for global agencies.</p>
+                        </div>
+                        <div class="glass-panel timeline-card tilt-card">
+                            <span class="tl-year">2026</span>
+                            <h4>Enterprise Scale</h4>
+                            <p>Leading high-uptime cloud architectures and cutting-edge React interfaces.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="cyber-section">
-            <h2 class="section-title" data-text=" < USER_BIO >">&lt; USER_BIO &gt;</h2>
-            <div class="about-grid">
-                <div class="avatar-container">
-                    <div class="scanline"></div>
-                    <img src="assests/profile.png" alt="Avatar" class="cyber-avatar">
+        <!-- ═══════════════════════════════════════ PROJECTS ═══════════════════════════════════════ -->
+        <section id="projects" class="section reveal-section">
+            <h2 class="section-heading"><span class="heading-bracket">&lt;</span> Projects <span
+                    class="heading-bracket">/&gt;</span></h2>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">all()</button>
+                <button class="filter-btn" data-filter="react">react()</button>
+                <button class="filter-btn" data-filter="node">node()</button>
+            </div>
+            <div class="projects-grid">
+                <div class="glass-panel project-card tilt-card" data-category="node">
+                    <div class="card-image">
+                        <img src="assests/tisha.png" alt="E-commerce Website">
+                        <div class="card-overlay">
+                            <a href="https://tishaalagbo.onrender.com" target="_blank" rel="noopener noreferrer"
+                                class="overlay-btn">Launch Demo →</a>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>Full-stack shopping experience with payment integration and inventory management.</p>
+                        <div class="card-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="tl-date">2023 - Origin</div>
-                        <div class="tl-content">Lagos Bootcamps: Initiated coding sequence and core syntax logic.</div>
+                <div class="glass-panel project-card tilt-card" data-category="react">
+                    <div class="card-image">
+                        <img src="assests/bank.png" alt="FinTech Dashboard">
+                        <div class="card-overlay">
+                            <a href="https://bank-app-three-nu.vercel.app" target="_blank" rel="noopener noreferrer"
+                                class="overlay-btn">Launch Demo →</a>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="tl-date">2024 - Freelance Mercenary</div>
-                        <div class="tl-content">Built robust full-stack MVPs and scalable web systems for global agencies.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tl-date">2026 - Enterprise Architect</div>
-                        <div class="tl-content">Leading high-uptime cloud architectures and cutting-edge React interfaces.</div>
+                    <div class="card-content">
+                        <h3>FinTech Dashboard</h3>
+                        <p>Modern banking dashboard UI with real-time data visualization and analytics.</p>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Resume / Timeline -->
-        <section id="resume" class="cyber-section">
-            <h2 class="section-title" data-text="< WORK_LOGS >">&lt; WORK_LOGS &gt;</h2>
-            <div class="accordion">
-                <div class="acc-item">
-                    <div class="acc-header">Lead Full Stack Engineer <span class="acc-icon">+</span></div>
-                    <div class="acc-body">
-                        <li>Led a 50k-user SaaS platform. Stack: React, Node.js, PostgreSQL. Achieved 99.9% uptime.</li>
+        <!-- ═══════════════════════════════════════ SKILLS ═══════════════════════════════════════ -->
+        <section id="skills" class="section reveal-section">
+            <h2 class="section-heading"><span class="heading-bracket">&lt;</span> Skills <span
+                    class="heading-bracket">/&gt;</span></h2>
+            <div class="skills-grid">
+                <div class="glass-panel skill-badge tilt-card">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React / Next.js</span>
+                    <div class="skill-level">
+                        <div class="skill-fill" style="--fill: 95%"></div>
                     </div>
                 </div>
-                <div class="acc-item">
-                    <div class="acc-header">Backend API Architect <span class="acc-icon">+</span></div>
-                    <div class="acc-body">
-                        <p>Designed scalable microservices architecture utilizing Docker, AWS, and Express routing.</p>
+                <div class="glass-panel skill-badge tilt-card">
+                    <i class="devicon-nodejs-plain colored"></i>
+                    <span>Node.js</span>
+                    <div class="skill-level">
+                        <div class="skill-fill" style="--fill: 92%"></div>
+                    </div>
+                </div>
+                <div class="glass-panel skill-badge tilt-card">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <span>PostgreSQL</span>
+                    <div class="skill-level">
+                        <div class="skill-fill" style="--fill: 88%"></div>
+                    </div>
+                </div>
+                <div class="glass-panel skill-badge tilt-card">
+                    <i class="devicon-docker-plain colored"></i>
+                    <span>Docker / AWS</span>
+                    <div class="skill-level">
+                        <div class="skill-fill" style="--fill: 85%"></div>
+                    </div>
+                </div>
+                <div class="glass-panel skill-badge tilt-card">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                    <div class="skill-level">
+                        <div class="skill-fill" style="--fill: 90%"></div>
+                    </div>
+                </div>
+                <div class="glass-panel skill-badge tilt-card">
+                    <i class="devicon-typescript-plain colored"></i>
+                    <span>TypeScript</span>
+                    <div class="skill-level">
+                        <div class="skill-fill" style="--fill: 93%"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio -->
-        <section id="portfolio" class="cyber-section">
-            <h2 class="section-title" data-text="< DEPLOYMENTS >">&lt; DEPLOYMENTS &gt;</h2>
-            <div class="filter-btns">
-                <button class="cyber-btn active" data-filter="all">All</button>
-                <button class="cyber-btn" data-filter="react">React / Next</button>
-                <!-- <button class="cyber-btn" data-filter="node">Node / Express</button> -->
-            </div>
-            <div class="portfolio-grid">
-                <div class="project-card" data-category="node">
-                    <div class="card-img-wrapper">
-                        <img src="assests/tisha.png" alt="Project">
-                        <div class="overlay-demo"><a href="https://tishaalagbo.onrender.com"></a>EXECUTE DEMO</div>
+        <!-- ═══════════════════════════════════════ EXPERIENCE ═══════════════════════════════════════ -->
+        <section id="experience" class="section reveal-section">
+            <h2 class="section-heading"><span class="heading-bracket">&lt;</span> Experience <span
+                    class="heading-bracket">/&gt;</span></h2>
+            <div class="experience-stack">
+                <div class="glass-panel exp-card tilt-card">
+                    <div class="exp-header">
+                        <h3>Lead Full Stack Engineer</h3>
+                        <span class="exp-date">2025 — Present</span>
                     </div>
-                    <div class="card-info">
-                        <h3>Ecommerce website</h3>
-                        <div class="badges"><span class="badge">Node.js</span><span class="badge">PostgreSQL</span></div>
+                    <p>Led a 50k-user SaaS platform. Stack: React, Node.js, PostgreSQL. Achieved 99.9% uptime with
+                        zero-downtime deployments.</p>
+                    <div class="card-tags">
+                        <span class="tag">React</span><span class="tag">Node.js</span><span
+                            class="tag">PostgreSQL</span><span class="tag">AWS</span>
                     </div>
                 </div>
-                <div class="project-card" data-category="react">
-                    <div class="card-img-wrapper">
-                        <img src="assests/bank.png" alt="Project">
-                        <div class="overlay-demo"><a href="https://bank-app-three-nu.vercel.app"></a>EXECUTE DEMO</div>
+                <div class="glass-panel exp-card tilt-card">
+                    <div class="exp-header">
+                        <h3>Backend API Architect</h3>
+                        <span class="exp-date">2024 — 2025</span>
                     </div>
-                    <div class="card-info">
-                        <h3>FinTech Dashboard UI</h3>
-                        <div class="badges"><span class="badge">React</span><span class="badge">Tailwind</span></div>
+                    <p>Designed scalable microservices architecture utilizing Docker, AWS, and Express routing for
+                        high-throughput API systems.</p>
+                    <div class="card-tags">
+                        <span class="tag">Docker</span><span class="tag">Express</span><span class="tag">AWS</span><span
+                            class="tag">Redis</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills" class="cyber-section">
-            <h2 class="section-title" data-text="< ARSENAL >">&lt; ARSENAL &gt;</h2>
-            <div class="skills-container">
-                <div class="skill-bar"><div class="skill-info"><span>Frontend (React/Next)</span><span>95%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div></div>
-                <div class="skill-bar"><div class="skill-info"><span>Backend (Node/Python)</span><span>92%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div></div>
-                <div class="skill-bar"><div class="skill-info"><span>DevOps (Docker/AWS)</span><span>88%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div></div>
-            </div>
-            <div class="cyber-icons">
-                <i class="devicon-react-original colored"></i>
-                <i class="devicon-nodejs-plain colored"></i>
-                <i class="devicon-postgresql-plain colored"></i>
-                <i class="devicon-docker-plain colored"></i>
-                <i class="devicon-python-plain colored"></i>
-            </div>
-        </section>
-
-        <!-- Pricing / Services -->
-        <section id="pricing" class="cyber-section">
-            <h2 class="section-title" data-text="< PROTOCOLS >">&lt; PROTOCOLS &gt;</h2>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <h3>Freelance App</h3><div class="price">$2k</div>
-                    <ul><li>Responsive SPA</li><li>Basic API Integration</li><li>Standard Delivery</li></ul>
-                    <button class="cyber-btn w-full">Request Quote</button>
-                </div>
-                <div class="price-card highlighted">
-                    <h3>Startup Scale</h3><div class="price">$5k<span>/mo</span></div>
-                    <ul><li>Full Stack Architecture</li><li>Database Modeling</li><li>Priority Comm Link</li></ul>
-                    <button class="cyber-btn w-full inverse">Request Quote</button>
-                </div>
-                <div class="price-card">
-                    <h3>Enterprise</h3><div class="price">Custom</div>
-                    <ul><li>Microservices</li><li>Advanced DevOps Setup</li><li>24/7 SLA</li></ul>
-                    <button class="cyber-btn w-full">Request Quote</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Form -->
-        <section id="contact" class="cyber-section">
-            <h2 class="section-title" data-text="< ESTABLISH_LINK >">&lt; ESTABLISH_LINK &gt;</h2>
-            <div class="contact-wrapper">
-                <form class="terminal-form" id="contact-form" >
-                    <div class="form-header">send_message.exe</div>
+        <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+        <section id="contact" class="section reveal-section">
+            <h2 class="section-heading"><span class="heading-bracket">&lt;</span> Contact <span
+                    class="heading-bracket">/&gt;</span></h2>
+            <div class="contact-layout">
+                <form class="glass-panel contact-form" id="contact-form">
+                    <div class="form-term-bar">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="term-label">send_message.sh</span>
+                    </div>
                     <div class="form-body">
-                        <div class="input-group">
-                            <label>USER_NAME:</label>
-                            <input type="text" name="name" required placeholder="Enter designation...">
+                        <div class="field">
+                            <label><span class="prompt-sym">$</span> name:</label>
+                            <input type="text" name="name" required placeholder="Enter your name...">
                         </div>
-                        <div class="input-group">
-                            <label>COMM_LINK (EMAIL):</label>
-                            <input type="email" name="email" required placeholder="Enter ping address...">
+                        <div class="field">
+                            <label><span class="prompt-sym">$</span> email:</label>
+                            <input type="email" name="email" required placeholder="Enter your email...">
                         </div>
-                        <div class="input-group">
-                            <label>PAYLOAD (SCOPE):</label>
-                            <textarea name="message" rows="4" required placeholder="Enter project parameters..."></textarea>
+                        <div class="field">
+                            <label><span class="prompt-sym">$</span> message:</label>
+                            <textarea name="message" rows="4" required
+                                placeholder="Describe your project..."></textarea>
                         </div>
-                        <button type="submit" class="cyber-btn">EXECUTE TRANSMISSION</button>
-                        <p id="contact-success" class="sys-msg"></p>
+                        <button type="submit" class="submit-btn">
+                            <span class="cmd-bracket">&gt;</span> execute_transmission()
+                        </button>
+                        <p id="contact-status" class="form-status"></p>
                     </div>
                 </form>
-                <div class="map-placeholder">
-                    <div class="pin"></div>
-                    <p>LOC: LAGOS, NIGERIA</p>
-                    <p>STATUS: ACCEPTING CONNECTIONS</p>
+                <div class="glass-panel location-card tilt-card">
+                    <div class="location-pin">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Lagos, Nigeria</h3>
+                    <p class="location-status"><span class="status-dot"></span> Accepting connections</p>
+                    <div class="location-stats">
+                        <div class="stat"><span class="stat-val">99.9%</span><span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat"><span class="stat-val">2,137</span><span class="stat-label">Commits</span>
+                        </div>
+                        <div class="stat"><span class="stat-val">&lt;24h</span><span class="stat-label">Response</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>System initialized by 1amGH05T © 2026</p>
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <p>Built by <strong>Joshua</strong> © 2026</p>
         <div class="social-links">
-            <a href="https://github.com/1amgh05t">[ GitHub ]</a>
-            <a href="#">[ LinkedIn ]</a>
-            <a href="#">[ X ]</a>
+            <a href="https://github.com/1amgh05t" target="_blank" rel="noopener noreferrer">[ GitHub ]</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">[ LinkedIn ]</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">[ X ]</a>
         </div>
     </footer>
 
     <script src="assests/main.js"></script>
 </body>
+
 </html>
